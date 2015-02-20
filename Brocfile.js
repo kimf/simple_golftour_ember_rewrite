@@ -5,6 +5,15 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var app = new EmberApp({
   vendorFiles: {
     'handlebars.js': null
+  },
+
+  minifyCSS: {
+    enabled: true,
+    options: {}
+  },
+
+  sassOptions: {
+    includePaths: require('node-neat').with('app/styles/bitters')
   }
 });
 
