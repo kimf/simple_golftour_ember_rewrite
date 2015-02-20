@@ -7,9 +7,7 @@ module.exports = function(app) {
     res.send({
       'token': 'eMaZ1HC7rohHgOR2Ghd7Sppo4LsK%0A',
       'user_email': 'kim@fransman.se',
-      'user_name': 'Kim Fransman',
-      'user_role': 'admin',
-      'is_good_looking': true
+      'user_name': 'Kim Fransman'
     });
   });
 

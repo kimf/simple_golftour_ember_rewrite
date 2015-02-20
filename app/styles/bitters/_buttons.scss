@@ -28,4 +28,8 @@ button {
     cursor: not-allowed;
     opacity: 0.5;
   }
+
+  &.small {
+    font-size: 0.75em;
+  }
 }

@@ -7,7 +7,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
 
-  this.route('app');
+  this.route('dashboard');
+  this.route('schedule');
+  this.route('tour', {path: '/tours/:tour_id'});
 
   this.route('signup');
 

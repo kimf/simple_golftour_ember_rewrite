@@ -9,7 +9,7 @@
           <li class="nav-link"><a href="javascript:void(0)">Sign Up</a></li>
           {{#if session.isAuthenticated}}
             <li class="nav-link">{{#link-to 'app'}}Go to app{{/link-to}}</li>
-            <a {{ action 'invalidateSession' }}>Logout</a>
+            <li class="nav-link"><a href="/" {{ action 'invalidateSession' }}>Logout</a></li>
           {{else}}
             <li class="nav-link"><a href="#login">Login</a></li>
           {{/if}}
@@ -93,17 +93,17 @@
 
   <div class="wrapper" id="login">
     <form {{action 'authenticate' on='submit'}} class="form-signin">
-      <legend>Logga in</legend>
-      <label for='identification'>E-post</label>
-      {{input id='identification' placeholder='E-post'
+      <legend>Login</legend>
+      <label for='identification'>Email</label>
+      {{input id='identification' placeholder='name@domain.com'
               value=identification}}
 
-      <label for='password'>Lösenord</label>
-      {{input id='password' placeholder='Lösenord'
+      <label for='password'>Password</label>
+      {{input id='password' placeholder='Minimum 6 characters'
               type='password' value=password}}
 
 
-      <button type='submit'>Logga in</button>
+      <button type='submit'>Login</button>
     </form>
   </div>
 
