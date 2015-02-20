@@ -1,0 +1,38 @@
+<div class="application">
+  <aside class="sidebar">
+    <figure class="logo">
+      <img src="/images/logo.png" alt="Logo Image" />
+    </figure>
+
+    <nav>
+      <ul>
+        <li>{{link-to "Overview" 'app.index'}}</li>
+        <li>{{link-to "Schedule" 'app.schedule'}}</li>
+      </ul>
+    </nav>
+
+    <nav>
+      <h4>Tours</h4>
+      <ul>
+        {{#each tour in attrs.tours}}
+          <li>
+            {{link-to tour.name 'app.tour' tour}}
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+
+    <div class="bottom">
+      <h4>{{session.user_name}}</h4>
+      <ul>
+        <li>{{link-to "Settings" 'app.settings' }}</li>
+        <li><a href="/" {{ action 'invalidateSession'}}>Logout</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <section class="main">
+    {{outlet}}
+  </section>
+
+</div>

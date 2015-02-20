@@ -6,11 +6,12 @@
       <nav role="navigation">
         <ul class="navigation-menu">
           <li class="nav-link"><a href="javascript:void(0)">How it works</a></li>
-          <li class="nav-link"><a href="javascript:void(0)">Sign Up</a></li>
           {{#if session.isAuthenticated}}
-            <li class="nav-link">{{#link-to 'app'}}Go to app{{/link-to}}</li>
-            <li class="nav-link"><a href="/" {{ action 'invalidateSession' }}>Logout</a></li>
+            <li class="nav-link">
+              {{link-to "GO TO APP" 'app'}}
+            </li>
           {{else}}
+            <li class="nav-link"><a href="javascript:void(0)">Sign Up</a></li>
             <li class="nav-link"><a href="#login">Login</a></li>
           {{/if}}
         </ul>
@@ -91,21 +92,24 @@
 
   </div>
 
-  <div class="wrapper" id="login">
-    <form {{action 'authenticate' on='submit'}} class="form-signin">
-      <legend>Login</legend>
-      <label for='identification'>Email</label>
-      {{input id='identification' placeholder='name@domain.com'
-              value=identification}}
 
-      <label for='password'>Password</label>
-      {{input id='password' placeholder='Minimum 6 characters'
-              type='password' value=password}}
+  {{#unless session.isAuthenticated}}
+    <div class="wrapper" id="login">
+      <form {{action 'authenticate' on='submit'}} class="form-signin">
+        <legend>Login</legend>
+        <label for='identification'>Email</label>
+        {{input id='identification' placeholder='name@domain.com'
+                value=identification}}
+
+        <label for='password'>Password</label>
+        {{input id='password' placeholder='Minimum 6 characters'
+                type='password' value=password}}
 
 
-      <button type='submit'>Login</button>
-    </form>
-  </div>
+        <button type='submit'>Login</button>
+      </form>
+    </div>
+  {{/unless}}
 
 
   <footer class="footer" role="contentinfo">

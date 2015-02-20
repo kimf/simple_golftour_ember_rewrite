@@ -38,21 +38,22 @@ module.exports = function(environment) {
 
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:devise',
-    routeAfterAuthentication: 'dashboard',
-    routeIfAlreadyAuthenticated: 'dashboard'
+    routeAfterAuthentication: 'app.index',
+    routeIfAlreadyAuthenticated: 'app.index'
     // crossOriginWhitelist: ['http://localhost:3000']
   };
 
 
   if (environment === 'development') {
     //ENV.APP.LOG_RESOLVER = true;
-    //ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
     ENV.APP.LOG_TRANSITIONS = true;
-    //ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    //ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV['simple-auth-devise'] = {
-      serverTokenEndpoint: '/api/v1/token'
+      serverTokenEndpoint: '/api/v1/token',
+      store: 'simple-auth-session-store:cookie'
     }
   }
 
@@ -73,7 +74,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV['simple-auth'] = {
+      store: 'simple-auth-session-store:cookie'
+    }
   }
 
   return ENV;
