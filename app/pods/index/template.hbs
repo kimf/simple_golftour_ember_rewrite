@@ -1,22 +1,114 @@
 <div class="publicsite">
-<div class="hero">
-  <div class="hero-inner">
-    <a href="" class="hero-logo"><img src="/images/logo.png" alt="Logo Image"></a>
-    <div class="hero-copy">
-      <h1>Short description of Product</h1>
-      <p>A few reasons why this product is worth using, who it's for and why they need it.</p>
+  <header class="navigation" role="banner">
+    <div class="navigation-wrapper">
+      <a href="" class="logo"><img src="/images/logo.png" alt="Logo Image"></a>
+
+      <nav role="navigation">
+        <ul class="navigation-menu">
+          <li class="nav-link"><a href="javascript:void(0)">How it works</a></li>
+          <li class="nav-link"><a href="javascript:void(0)">Sign Up</a></li>
+          {{#if session.isAuthenticated}}
+            <li class="nav-link">{{#link-to 'app'}}Go to app{{/link-to}}</li>
+            <a {{ action 'invalidateSession' }}>Logout</a>
+          {{else}}
+            <li class="nav-link"><a href="#login">Login</a></li>
+          {{/if}}
+        </ul>
+      </nav>
     </div>
-    <button>Learn More</button>
+  </header>
+
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Short description of Product</h1>
+        <p>A few reasons why this product is worth using, who it's for and why they need it.</p>
+      </div>
+      <button>Learn More</button>
+    </div>
   </div>
-</div>
 
 
+  <div class="wrapper">
+
+    <h2>HOW IT WORKS</h2>
+
+    <div class="how">
+      <div class="how-image">
+        <img src="/images/features_step_1.png" alt="Step 1 Image" />
+      </div>
+      <div class="how-content">
+        <h1>First how Title or Author</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
+        <p class="how-detail">Date or details about this post</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <div class="how-image">
+        <img src="/images/features_step_2.png" alt="Step 2 Image" />
+      </div>
+      <div class="how-content">
+        <h1>Another One</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
+        <p class="how-detail">Date or details about this post</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <div class="how-image">
+        <img src="/images/features_step_3.png" alt="Step 3 Image" />
+      </div>
+      <div class="how-content">
+        <h1>Another One</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
+        <p class="how-detail">Date or details about this post</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <div class="how-image">
+        <img src="/images/features_step_4.png" alt="Step 4 Image" />
+      </div>
+      <div class="how-content">
+        <h1>Another One</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
+        <p class="how-detail">Date or details about this post</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <div class="how-image">
+        <img src="/images/features_step_5.png" alt="Step 5 Image" />
+      </div>
+      <div class="how-content">
+        <h1>Another One</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
+        <p class="how-detail">Date or details about this post</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wrapper" id="login">
+    <form {{action 'authenticate' on='submit'}} class="form-signin">
+      <legend>Logga in</legend>
+      <label for='identification'>E-post</label>
+      {{input id='identification' placeholder='E-post'
+              value=identification}}
+
+      <label for='password'>Lösenord</label>
+      {{input id='password' placeholder='Lösenord'
+              type='password' value=password}}
+
+
+      <button type='submit'>Logga in</button>
+    </form>
+  </div>
 
 
   <footer class="footer" role="contentinfo">
-    <div class="footer-logo">
-      <img src="/images/logo.png" alt="Logo image" />
-    </div>
     Simple Golftour - A very, very simple free software for golf leagues between friends.
 
     <div class="footer-secondary-links">
@@ -31,4 +123,5 @@
       </ul>
     </div>
   </footer>
+
 </div>

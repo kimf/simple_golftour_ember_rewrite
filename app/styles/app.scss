@@ -10,7 +10,16 @@
 
 @import "neat";
 
+body{
+  margin: 0; padding: 0;
+}
+
 .publicsite{
+  .wrapper{
+    @include clearfix;
+    @include outer-container;
+    padding: 40px 0;
+  }
   @import "publicsite/base";
 }
 

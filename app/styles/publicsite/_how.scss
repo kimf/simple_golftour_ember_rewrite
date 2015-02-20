@@ -1,0 +1,65 @@
+.how {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-radius: 3px !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $how-gutter: 1.4em;
+  $how-image-padding: 0.7em;
+  $how-color: $base-font-color;
+  $how-background: lighten($base-accent-color, 15%);
+  $how-detail-color: transparentize($how-color, 0.5);
+  $how-image-vert-alignment: top;
+
+  border-bottom: 1px solid transparentize($how-color, 0.9);
+  display: table;
+  margin-bottom: $base-spacing;
+  padding-bottom: 1em;
+  width: 100%;
+
+  .how-image,
+  .how-content {
+    display: table-cell;
+    vertical-align: $how-image-vert-alignment;
+  }
+
+  .how-image {
+    padding-right: $how-gutter;
+
+    > img {
+      display: block;
+      height: auto;
+      max-width: none;
+      padding: $how-image-padding;
+    }
+
+    .how-reverse-order & {
+      padding-right: 0;
+      padding-left: 10px;
+    }
+  }
+
+  .how-content {
+    width: 100%;
+
+    h1 {
+      font-size: 1em;
+      margin: 0 0 0.5em 0;
+    }
+
+    p {
+      line-height: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    p.how-detail {
+      color: $how-detail-color;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+  }
+}
+
