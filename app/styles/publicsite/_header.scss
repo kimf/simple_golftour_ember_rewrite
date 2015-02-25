@@ -1,6 +1,6 @@
 header.navigation {
   ///////////////////////////////////////////////////////////////////////////////////
-  $base-accent-color: #477DCA !default;
+  $base-accent-color: #0092DB !default;
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
 
@@ -24,7 +24,7 @@ header.navigation {
   $navigation-submenu-width: 12em;
   $horizontal-bar-mode: $large-screen;
 
-  background-color: $navigation-background;
+  background: transparent;
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;

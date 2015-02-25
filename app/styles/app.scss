@@ -14,20 +14,26 @@ body{
   margin: 0; padding: 0;
 }
 
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
 .publicsite{
   .wrapper{
     @include clearfix;
     @include outer-container;
-    padding: 40px 0;
+
+    &#login, &#signup{
+      @include span-columns(6);
+    }
   }
   @import "publicsite/base";
 }
 
 .application{
-  html,body{
-    height: 100%
-  }
-
+  @import "loading";
   @import "sidebar";
   @import "main";
+  @import "content-header";
 }

@@ -1,7 +1,7 @@
 .hero {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-border-radius: 3px !default;
-  $base-accent-color: #477DCA !default;
+  $base-accent-color: #0092DB !default;
   $large-screen: em(860) !default;
   //////////////////////////////////////////////////////////////////////////////////
 
@@ -17,6 +17,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 3em;
+  margin-top: -60px;
+  padding-top: 80px;
 
   .hero-inner {
     @include outer-container;
@@ -30,7 +32,8 @@
       text-align: center;
 
       h1 {
-        font-size: 1.6em;
+        font-size: 2em;
+        text-transform: uppercase;
         margin-bottom: 0.5em;
 
         @include media($large-screen) {
@@ -52,7 +55,8 @@
 
     button {
       @include button(flat, $base-accent-color);
-      padding: 0.7em 1em;
+      padding: 1em 2em;
+      font-size: 1.5em;
     }
   }
 }
