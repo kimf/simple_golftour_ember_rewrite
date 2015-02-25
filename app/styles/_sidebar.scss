@@ -49,8 +49,10 @@ aside.sidebar{
 
     &.active {
       font-weight: bold;
-      color: lighten($blue, 20%);
+      color: #fff;
       background: darken($blue, 5%);
+      border-left: 2px solid darken($blue, 50%);
+      text-indent: -2px;
     }
   }
 
@@ -60,7 +62,6 @@ aside.sidebar{
     bottom: 0;
     padding: 20px 0;
     a{
-      margin-top: 5px;
       padding: 0 20px;
     }
   }
