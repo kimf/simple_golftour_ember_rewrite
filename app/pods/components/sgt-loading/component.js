@@ -4,9 +4,14 @@ export default Ember.Component.extend({
   tagName: 'div',
 
   didInsertElement: function(){
-    window.setTimeout( () => {
-      this.setBarWidth(0);
-    }, 500);
+    var hasLoaded = window.localStorage.getItem('hasSeenLoadingAnimation');
+    if(hasLoaded){
+      Ember.$('#loading').remove();
+    } else {
+      window.setTimeout( () => {
+        this.setBarWidth(0);
+      }, 500);
+    }
   },
 
   setBarWidth: function(number){
@@ -18,6 +23,7 @@ export default Ember.Component.extend({
         this.setBarWidth(num);
       }, 5);
     } else {
+      window.localStorage.setItem('hasSeenLoadingAnimation', true);
       Ember.$('#loading').addClass('hidden');
     }
   }

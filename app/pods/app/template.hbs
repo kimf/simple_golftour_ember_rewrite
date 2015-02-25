@@ -7,9 +7,11 @@
     </figure>
 
     <nav>
+      <h4>{{session.user_name}}</h4>
       <ul>
         <li>{{link-to "Overview" 'app.index'}}</li>
         <li>{{link-to "Schedule" 'app.schedule'}}</li>
+        <li>{{link-to "Settings" 'app.settings' }}</li>
       </ul>
     </nav>
 
@@ -25,9 +27,7 @@
     </nav>
 
     <div class="bottom">
-      <h4>{{session.user_name}}</h4>
       <ul>
-        <li>{{link-to "Settings" 'app.settings' }}</li>
         <li><a href="/" {{ action 'invalidateSession'}}>Logout</a></li>
       </ul>
     </div>
