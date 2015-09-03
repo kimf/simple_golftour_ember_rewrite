@@ -6,7 +6,7 @@ module.exports = function(environment) {
     podModulePrefix: 'sgt/pods',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -36,25 +36,12 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise',
-    routeAfterAuthentication: 'app.index',
-    routeIfAlreadyAuthenticated: 'app.index'
-    // crossOriginWhitelist: ['http://localhost:3000']
-  };
-
-
   if (environment === 'development') {
     //ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
     ENV.APP.LOG_TRANSITIONS = true;
     ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
-
-    ENV['simple-auth-devise'] = {
-      serverTokenEndpoint: '/api/v1/token',
-      store: 'simple-auth-session-store:cookie'
-    }
   }
 
   if (environment === 'test') {
@@ -67,16 +54,10 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-
-    ENV['simple-auth'] = {
-      store: 'simple-auth-session-store:ephemeral'
-    }
   }
 
   if (environment === 'production') {
-    ENV['simple-auth'] = {
-      store: 'simple-auth-session-store:cookie'
-    }
+
   }
 
   return ENV;

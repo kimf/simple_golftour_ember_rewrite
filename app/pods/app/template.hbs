@@ -18,7 +18,7 @@
     <nav>
       <h4>Tours</h4>
       <ul>
-        {{#each tour in attrs.tours}}
+        {{#each attrs.tours as |tour|}}
           <li>
             {{link-to tour.name 'app.tour' tour}}
           </li>
@@ -28,7 +28,7 @@
 
     <div class="bottom">
       <ul>
-        <li><a href="/" {{ action 'invalidateSession'}}>Logout</a></li>
+        <li><a href="/">Logout</a></li>
       </ul>
     </div>
   </aside>
