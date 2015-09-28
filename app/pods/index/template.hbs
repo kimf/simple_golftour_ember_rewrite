@@ -6,14 +6,8 @@
       <nav role="navigation">
         <ul class="navigation-menu">
           <li class="nav-link"><a href="javascript:void(0)">How it works</a></li>
-          {{#if session.isAuthenticated}}
-            <li class="nav-link">
-              {{link-to "GO TO APP" 'app'}}
-            </li>
-          {{else}}
-            <li class="nav-link"><a href="javascript:void(0)">Sign Up</a></li>
-            <li class="nav-link"><a href="#login">Login</a></li>
-          {{/if}}
+          <li class="nav-link"><a href="javascript:void(0)">Sign Up</a></li>
+          <li class="nav-link">{{link-to "GO TO APP" 'app'}}</li>
         </ul>
       </nav>
     </div>
@@ -93,24 +87,23 @@
   </div>
 
 
-  {{#unless session.isAuthenticated}}
-    <div class="wrapper" id="login">
-      <form {{action 'authenticate' on='submit'}} class="form-signin">
-        <legend>Login</legend>
-        <label for='identification'>Email</label>
-        {{input id='identification' placeholder='name@domain.com'
-                value=identification}}
 
-        <label for='password'>Password</label>
-        {{input id='password' placeholder='Minimum 6 characters'
-                type='password' value=password}}
+{{!--   <div class="wrapper" id="login">
+    <form {{action 'authenticate' on='submit'}} class="form-signin">
+      <legend>Login</legend>
+      <label for='identification'>Email</label>
+      {{input id='identification' placeholder='name@domain.com'
+              value=identification}}
+
+      <label for='password'>Password</label>
+      {{input id='password' placeholder='Minimum 6 characters'
+              type='password' value=password}}
 
 
-        <button type='submit'>Login</button>
-      </form>
-    </div>
-  {{/unless}}
-
+      <button type='submit'>Login</button>
+    </form>
+  </div>
+ --}}
 
   <footer class="footer" role="contentinfo">
     Simple Golftour - A very, very simple free software for golf leagues between friends.
