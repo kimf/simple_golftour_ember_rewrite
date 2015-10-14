@@ -20,7 +20,9 @@
       <ul>
         {{#each attrs.tours as |tour|}}
           <li>
-            {{link-to tour.name 'app.tour' tour}}
+            {{#link-to 'app.tour' tour}}
+              {{tour.name}} {{{tour.presentableRole}}}
+            {{/link-to}}
           </li>
         {{/each}}
       </ul>
