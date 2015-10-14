@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  didInsertElement: function(){
+  didInsertElement() {
     var hasLoaded = window.localStorage.getItem('hasSeenLoadingAnimation');
     if(hasLoaded){
       Ember.$('#loading').remove();
@@ -13,7 +13,7 @@ export default Ember.Component.extend({
     }
   },
 
-  setBarWidth: function(number){
+  setBarWidth(number) {
     var num = number + 1;
     Ember.$('#loading .bar').width(parseInt(num)+'px');
 

@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  model: function() {
+  model() {
     return this.store.findAll('tour');
   },
 
-  setupController: function(controller, model){
+  setupController(controller, model) {
     controller.set('attrs.tours', model);
   }
 
