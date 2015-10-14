@@ -9,17 +9,11 @@ module.exports = function(environment) {
     locationType: 'history',
     EmberENV: {
       FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
-        'ember-htmlbars': true,
-        'ember-htmlbars-attribute-syntax': true,
-        'ember-htmlbars-inline-if-helper': true,
+        'ember-testing-checkbox-helpers': true,
         'ember-htmlbars-component-generation': true,
         'ember-htmlbars-each-with-index': true,
-        'ember-routing-named-substates': true,
-        'ember-htmlbars-block-params': true,
-        'ember-testing-pause-test': true,
-        'ember-routing-routable-components': true
+        'ember-routing-routable-components': true,
+        'ember-metal-ember-assign': true
       }
     },
 

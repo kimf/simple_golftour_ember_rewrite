@@ -1,8 +1,7 @@
 import DS from 'ember-data';
-import ActiveModelAdapter from 'active-model-adapter';
 //import config from '../config/environment';
 
-export default ActiveModelAdapter.extend({
+export default DS.JSONAPIAdapter.extend({
   coalesceFindRequests: true,
   namespace: 'api/v1',
   // host: config.APP.apiURL,

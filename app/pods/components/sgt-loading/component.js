@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.GlimmerComponent.extend({
-  tagName: 'div',
+export default Ember.Component.extend({
 
   didInsertElement: function(){
     var hasLoaded = window.localStorage.getItem('hasSeenLoadingAnimation');
