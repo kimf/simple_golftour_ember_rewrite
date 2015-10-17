@@ -1,3 +1,12 @@
 {
-  "extends": "ember"
+  "rules": {
+    "quotes": [2, "single"],
+    "comma-dangle": [1, "never"],
+    "key-spacing": [0, {
+      "beforeColon": true,
+      "afterColon": true
+    }],
+    "no-else-return": 0,
+    "space-before-function-paren": [0, "always"]
+  }
 }
